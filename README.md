@@ -1,15 +1,6 @@
 # eLogger
 eLogger is a modern efficient **cross-platform** logger
 
-
-**Platform Support**
-- [x] Windows
-- [x] macOS
-- [x] Linux
-- [ ] FreeBSD (ToDo...)
-- [ ] Android (ToDo...)
-- [ ] iOS (ToDo...)
-
 **Note :** This library is not yet complete and conceptually under development.
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)
@@ -20,6 +11,14 @@ eLogger is a modern efficient **cross-platform** logger
 ![Version](https://img.shields.io/badge/Version-0.4-lightgrey)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20iOS%20%7C%20Android%20%7C%20Web-lightgrey)
 ![Dependencies](https://img.shields.io/badge/dependencies-Curl%20%7C%20RapidJson-yellow)
+
+**Platform Support**
+- [x] Windows
+- [x] macOS
+- [x] Linux
+- [ ] FreeBSD (Under Development)
+- [ ] Android (Under Development)
+- [ ] iOS (Under Development)
 
 ## Installation
 <p>
