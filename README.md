@@ -20,11 +20,10 @@ First of all, You need to make sure that curl library is installed on your devel
 ## Building
 
 - You need CMake tool for building source code
-- Get Curl & RapidJson [Pay Attention: RapidJson is header only]
 - All source code is written with Pure STL 1z (C++17)
 - MSVC 2017, GCC8.x or Clang 9.x
-- Add RestService.dll [on Windows], libRestService.dylib [on macOS] or libRestService.so [on Linux] for your project as external library. you can compile it by static mode.
-- Import SDK common header ```#include <RestService>```
+- Add eLogger.dll [on Windows], libeLogger.dylib [on macOS] or libeLogger.so [on Linux] for your project as external library. you can compile it by static mode.
+- Import SDK common header ```#include <eLogger>```
 
 **Note:** In order to build the create, your compiler must support C++17 features.
 
