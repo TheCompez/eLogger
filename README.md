@@ -35,6 +35,27 @@ cmake .. -DENABLE_SAFTY_MODE=true
 
 ## Usage Example
 
+- You can specify the settings of log level:
+
+```cpp
+eLogger::Logger::LoggerModel = eLogger::Mode::User;
+```
+
+- And then, you can check developer mode if it was enable!
+
+```cpp
+if(isset(DeveloperMode::IsEnable)) {
+        eLogger::Log("Info Message      : " , LoggerType::Info);
+        eLogger::Log("Default Message   : " , LoggerType::Default);
+        eLogger::Log("Warning Message   : " , LoggerType::Warning);
+        eLogger::Log("Paused Message    : " , LoggerType::Paused);
+        eLogger::Log("Success Message   : " , LoggerType::Success);
+        eLogger::Log("Progress Message  : " , LoggerType::InProgress);
+        eLogger::Log("Failed Message    : " , LoggerType::Failed);
+        eLogger::Log("Done Message      : " , LoggerType::Done);
+}
+```
+
 ## Contribution
 Bug fixes, docs, and enhancements welcome! Please let me know kambiz.ceo@gmail.com
 
