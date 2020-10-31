@@ -35,6 +35,17 @@ cmake .. -DENABLE_SAFTY_MODE=true
 
 ## Usage Example
 
+- You can set logger state by building tools variable such as CMake or QMake by ```ELOGGER_BUILD_DEBUG_MODE``` variable.
+```
+CMAKE:
+set(ELOGGER_BUILD_DEBUG_MODE true)
+QMAKE:
+DEFINES += ELOGGER_BUILD_DEBUG_MODE
+```
+- Or you can set this option as c++ boolian type
+```cpp
+DeveloperMode::IsEnable = true; //false means you can't print any logs.
+```
 - You can specify the settings of log level:
 
 ```cpp
@@ -55,7 +66,36 @@ if(isset(DeveloperMode::IsEnable)) {
         eLogger::Log("Done Message      : " , LoggerType::Done);
 }
 ```
+## Full Example of usage
 
+```cpp
+
+#include <iostream>
+#include <eLogger>
+
+using namespace eLogger;
+
+int main()
+{
+
+    DeveloperMode::IsEnable = true;
+
+    eLogger::Logger::LoggerModel = eLogger::Mode::Developer;
+
+    if(isset(DeveloperMode::IsEnable)) {
+        eLogger::Log("Info Message      : " , LoggerType::Info);
+        eLogger::Log("Default Message   : " , LoggerType::Default);
+        eLogger::Log("Warning Message   : " , LoggerType::Warning);
+        eLogger::Log("Paused Message    : " , LoggerType::Paused);
+        eLogger::Log("Success Message   : " , LoggerType::Success);
+        eLogger::Log("Progress Message  : " , LoggerType::InProgress);
+        eLogger::Log("Failed Message    : " , LoggerType::Failed);
+        eLogger::Log("Done Message      : " , LoggerType::Done);
+    }
+
+    return 0;
+}
+```
 ## Output as User mode:
 ```
  => Log Id : [0] : [Info] Info Message      :  { DateTime: 2020/11/01 01:48:19 }
