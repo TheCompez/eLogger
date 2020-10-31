@@ -14,7 +14,7 @@ eLogger is a modern efficient **cross-platform** logger
 
 ## Installation
 <p>
-First of all, You need to make sure that curl library is installed on your development environment. So it may have some problems!
+Just add into your project :) And go on!
 </p>
 
 ## Building
