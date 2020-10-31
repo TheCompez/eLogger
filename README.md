@@ -1,5 +1,5 @@
 # eLogger
-eLogger is an efficient modern cross-platform logger!
+eLogger is a modern efficient **cross-platform** logger
 
 **Note :** This library is not yet complete and conceptually under development.
 
