@@ -56,6 +56,28 @@ if(isset(DeveloperMode::IsEnable)) {
 }
 ```
 
+## Output as User mode:
+
+ => Log Id : [0] : [Info] Info Message      :  { DateTime: 2020/11/01 01:48:19 }
+ => Log Id : [1] : [Default] Default Message   :  { DateTime: 2020/11/01 01:48:19 }
+ => Log Id : [2] : [Warning] Warning Message   :  { DateTime: 2020/11/01 01:48:19 }
+ => Log Id : [3] : [Paused] Paused Message    :  { DateTime: 2020/11/01 01:48:19 }
+ => Log Id : [4] : [Success] Success Message   :  { DateTime: 2020/11/01 01:48:19 }
+ => Log Id : [5] : [InProgress] Progress Message  :  { DateTime: 2020/11/01 01:48:19 }
+ => Log Id : [6] : [Failed] Failed Message    :  { DateTime: 2020/11/01 01:48:19 }
+ => Log Id : [7] : [Done] Done Message      :  { DateTime: 2020/11/01 01:48:19 }
+ 
+ ## Output as Developer mode:
+
+ => Log Id : [0][ Line : 15] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Info] Info Message      :  { DateTime: 2020/11/01 01:49:29 }
+ => Log Id : [1][ Line : 16] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Default] Default Message   :  { DateTime: 2020/11/01 01:49:29 }
+ => Log Id : [2][ Line : 17] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Warning] Warning Message   :  { DateTime: 2020/11/01 01:49:29 }
+ => Log Id : [3][ Line : 18] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Paused] Paused Message    :  { DateTime: 2020/11/01 01:49:29 }
+ => Log Id : [4][ Line : 19] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Success] Success Message   :  { DateTime: 2020/11/01 01:49:29 }
+ => Log Id : [5][ Line : 20] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [InProgress] Progress Message  :  { DateTime: 2020/11/01 01:49:29 }
+ => Log Id : [6][ Line : 21] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Failed] Failed Message    :  { DateTime: 2020/11/01 01:49:29 }
+ => Log Id : [7][ Line : 22] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Done] Done Message      :  { DateTime: 2020/11/01 01:49:29 }
+ 
 ## Contribution
 Bug fixes, docs, and enhancements welcome! Please let me know kambiz.ceo@gmail.com
 
