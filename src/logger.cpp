@@ -7,18 +7,19 @@ Logger::Logger() {}
 
 Logger::~Logger() {}
 
-void Logger::echo(const unsigned int &counter,
-                  const time_t  &occurTime,
-                  const unsigned int &line,
-                  std::string_view  function,
-                  std::string_view  file,
-                  std::string_view  message,
-                  const int  &type)
+void Logger::echo(const unsigned int counter,
+                  const time_t occurTime,
+                  const unsigned int line,
+                  const std::string &function,
+                  const std::string &file,
+                  const std::string &message,
+                  const int type)
 {
     std::thread::id threadId = std::this_thread::get_id();
     std::stringstream strThreadId;
     strThreadId << threadId;
 
+    //ToDo...
     //auto timeTemp = std::string(std::ctime(&occurTime));
 
     std::mutex           _mutex;

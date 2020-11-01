@@ -57,13 +57,13 @@ public:
 
     inline static Mode LoggerModel = Mode::User;
 
-    static void echo(const unsigned int &counter,
-                     const time_t  &occurTime,
-                     const unsigned int &line,
-                     std::string_view function,
-                     std::string_view file,
-                     std::string_view message,
-                     const int &type);
+    static void echo(const unsigned int counter,
+                     const time_t  occurTime,
+                     const unsigned int line,
+                     const std::string& function,
+                     const std::string& file,
+                     const std::string& message,
+                     const int type);
 
 };
 
