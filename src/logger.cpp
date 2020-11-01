@@ -19,14 +19,11 @@ void Logger::echo(const unsigned int counter,
     std::stringstream strThreadId;
     strThreadId << threadId;
 
-    //ToDo...
-    //auto timeTemp = std::string(std::ctime(&occurTime));
-
     std::mutex           _mutex;
-    std::string_view     typeStr           = STR_NULL;
+    std::string          typeStr         = STR_NULL;
     std::ostream&        streamInStyle   = std::cout;
-    std::string_view     beginStyle        = STR_NULL;
-    std::string_view     endStyle          = STR_NULL;
+    std::string          beginStyle      = STR_NULL;
+    std::string          endStyle        = STR_NULL;
 
     switch (type) {
     case LoggerType::Default:
@@ -96,6 +93,7 @@ void Logger::echo(const unsigned int counter,
         std::lock_guard<std::mutex> lock(_mutex);
 
     } else if(LoggerModel == Mode::Developer) {
+
         streamInStyle << " => Log Id : [" << counter  << "]"
                       << "[ Line : "  << line << "] "
                       << "[ Function : "  << function << "] "
@@ -109,6 +107,7 @@ void Logger::echo(const unsigned int counter,
         std::lock_guard<std::mutex> lock(_mutex);
 
     } else if(LoggerModel == Mode::DataMining) {
+
         streamInStyle << " => Log Id : [" << counter  << "]"
                       << "[ Line : "  << line << "] "
                       << "[ Function : "  << function << "] "
