@@ -7,7 +7,7 @@
 #include <string>
 #include <string_view>
 
-namespace eLogger {
+E_LOGGER_NAMESPACE_BEGIN(eLogger)
 
 template <typename T>
 /*!
@@ -40,11 +40,15 @@ struct DeveloperMode {
 /*!
  * \brief The Core class
  */
-class ELOGGER_EXPORT Core
+class __e_logger_export Core
 {
 public:
     Core();
     ~Core();
+
+    static std::string getStandard();
+
+    static void init();
 
     template<typename ... Args>
     [[maybe_unused]] std::string stringFormat(const std::string& format, Args ... args)
@@ -65,7 +69,7 @@ class NativeTerminal;
 /*!
  * \brief The NativeTerminal class
  */
-class ELOGGER_EXPORT NativeTerminal {
+class __e_logger_export NativeTerminal {
 public:
     NativeTerminal();
     ~NativeTerminal();
@@ -137,6 +141,7 @@ public:
 #endif
 
     [[maybe_unused]] void setColor(const ColorType &color);
+
     [[maybe_unused]] void resetColor();
 
     static std::ostream& Default    (std::ostream& stream);
@@ -148,7 +153,6 @@ public:
     static std::ostream& Done       (std::ostream& stream);
     static std::ostream& Paused     (std::ostream& stream);
     static std::ostream& InProgress (std::ostream& stream);
-
     static std::ostream& Primary    (std::ostream& stream);
 
  /*!
@@ -164,6 +168,6 @@ private:
 };
 
 
-}
+E_LOGGER_BRACE_END
 
 #endif // API_HPP

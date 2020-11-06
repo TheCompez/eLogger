@@ -1,15 +1,27 @@
 #include "core.hpp"
+#include <sstream>
 
-namespace eLogger {
+E_LOGGER_NAMESPACE_BEGIN(eLogger)
 
 Core::Core()
 {
-    //ToDo...
+    //TODO...
 }
 
 Core::~Core()
 {
-    //ToDo...
+    //TODO...
+}
+
+std::string Core::getStandard()
+{
+    std::stringstream langStandard;
+    langStandard << __cplusplus;
+    std::string res = langStandard.str();
+    if (!res.empty()) {
+        res.erase(res.size() - 2); //Get only year number from ISO/IEC!
+    }
+    return res;
 }
 
 NativeTerminal::NativeTerminal()
@@ -156,5 +168,15 @@ std::ostream &NativeTerminal::Primary(std::ostream &stream)
     return stream;
 }
 
-
+void Core::init()
+{
+    std::ostream&    streamInStyle   = std::cout;
+    streamInStyle << "eLogger " << __e_full_version << " - " << "compiled on " << __e_compiled_date << __e_newline;
+    streamInStyle << "Release mode: " << __e_release_mode << " - " << __e_release_mode_number << __e_newline;
+    streamInStyle << __e_bold << "Host machine init: " << __e_reset << __e_newline;
+    streamInStyle << "Operation System: "  << __e_platform_os << __e_newline;
+    streamInStyle << "Language Standard: " << __e_under_score << "ISO/IEC 14882:" << getStandard() << __e_reset << __e_newline;
+    streamInStyle << "Compiler Type: " << __e_compiler << ":" << __e_compiler_ver << __e_newline;
 }
+
+E_LOGGER_NAMESPACE_END

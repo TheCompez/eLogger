@@ -1,7 +1,7 @@
 #include "logger.hpp"
 #include "core.hpp"
 
-namespace eLogger {
+E_LOGGER_NAMESPACE_BEGIN(eLogger)
 
 Logger::Logger() {}
 
@@ -10,9 +10,9 @@ Logger::~Logger() {}
 void Logger::echo(const unsigned int counter,
                   const time_t occurTime,
                   const unsigned int line,
-                  const std::string &function,
-                  const std::string &file,
-                  const std::string &message,
+                  std::string_view function,
+                  std::string_view file,
+                  std::string_view message,
                   const int type)
 {
     std::thread::id threadId = std::this_thread::get_id();
@@ -20,10 +20,10 @@ void Logger::echo(const unsigned int counter,
     strThreadId << threadId;
 
     std::mutex           _mutex;
-    std::string          typeStr         = STR_NULL;
+    std::string          typeStr         = __e_null_str;
     std::ostream&        streamInStyle   = std::cout;
-    std::string          beginStyle      = STR_NULL;
-    std::string          endStyle        = STR_NULL;
+    std::string          beginStyle      = __e_null_str;
+    std::string          endStyle        = __e_null_str;
 
     switch (type) {
     case LoggerType::Default:
@@ -88,7 +88,7 @@ void Logger::echo(const unsigned int counter,
                       << "] : ["  << typeStr << "] "
                       << message << " { DateTime: "
                       << std::put_time(localtime(&occurTime), "%Y/%m/%d %H:%M:%S") << " }"
-                      << NativeTerminal::Reset << newline;
+                      << NativeTerminal::Reset << __e_newline;
 
         std::lock_guard<std::mutex> lock(_mutex);
 
@@ -102,7 +102,7 @@ void Logger::echo(const unsigned int counter,
                       << "] : ["    << typeStr << "] "
                       << message    << " { DateTime: "
                       << std::put_time(localtime(&occurTime), "%Y/%m/%d %H:%M:%S") << " }"
-                      << NativeTerminal::Reset << newline;
+                      << NativeTerminal::Reset << __e_newline;
 
         std::lock_guard<std::mutex> lock(_mutex);
 
@@ -116,9 +116,9 @@ void Logger::echo(const unsigned int counter,
                       << "] : ["    << typeStr << "] "
                       << message    << " { DateTime: "
                       << std::put_time(localtime(&occurTime), "%Y/%m/%d %H:%M:%S") << " }"
-                      << NativeTerminal::Reset << newline;
+                      << NativeTerminal::Reset << __e_newline;
         std::lock_guard<std::mutex> lock(_mutex);
     }
 }
 
-}
+E_LOGGER_NAMESPACE_END
