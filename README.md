@@ -80,31 +80,41 @@ if(isset(DeveloperMode::IsEnable)) {
 #include <iostream>
 #include <eLogger>
 
+using namespace std;
 using namespace eLogger;
 
 int main()
 {
+    Core::init();
 
-    DeveloperMode::IsEnable = true;
+    DeveloperMode::IsEnable = {true};
 
-    eLogger::Logger::LoggerModel = eLogger::Mode::Developer;
+    Logger::LoggerModel = Mode::Developer;
 
     if(isset(DeveloperMode::IsEnable)) {
-        eLogger::Log("Info Message      : " , LoggerType::Info);
-        eLogger::Log("Default Message   : " , LoggerType::Default);
-        eLogger::Log("Warning Message   : " , LoggerType::Warning);
-        eLogger::Log("Paused Message    : " , LoggerType::Paused);
-        eLogger::Log("Success Message   : " , LoggerType::Success);
-        eLogger::Log("Progress Message  : " , LoggerType::InProgress);
-        eLogger::Log("Failed Message    : " , LoggerType::Failed);
-        eLogger::Log("Done Message      : " , LoggerType::Done);
+        Log("Info Message      : " , LoggerType::Info);
+        Log("Default Message   : " , LoggerType::Default);
+        Log("Warning Message   : " , LoggerType::Warning);
+        Log("Paused Message    : " , LoggerType::Paused);
+        Log("Success Message   : " , LoggerType::Success);
+        Log("Progress Message  : " , LoggerType::InProgress);
+        Log("Failed Message    : " , LoggerType::Failed);
+        Log("Done Message      : " , LoggerType::Done);
     }
 
     return 0;
 }
+
 ```
 ## Output as User mode:
 ```
+        eLogger 0.5 - compiled on Nov  6 2020
+        Release mode: alpha - 2
+        Host machine init: 
+        Operation System: macOS
+        Language Standard: ISO/IEC 14882:2017
+        Compiler Type: Clang/LLVM:12.0.0 (clang-1200.0.32.6)
+
  => Log Id : [0] : [Info] Info Message      :  { DateTime: 2020/11/01 01:48:19 }
  => Log Id : [1] : [Default] Default Message   :  { DateTime: 2020/11/01 01:48:19 }
  => Log Id : [2] : [Warning] Warning Message   :  { DateTime: 2020/11/01 01:48:19 }
@@ -116,14 +126,21 @@ int main()
  ```
  ## Output as Developer mode:
 ```
- => Log Id : [0][ Line : 15] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Info] Info Message      :  { DateTime: 2020/11/01 01:49:29 }
- => Log Id : [1][ Line : 16] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Default] Default Message   :  { DateTime: 2020/11/01 01:49:29 }
- => Log Id : [2][ Line : 17] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Warning] Warning Message   :  { DateTime: 2020/11/01 01:49:29 }
- => Log Id : [3][ Line : 18] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Paused] Paused Message    :  { DateTime: 2020/11/01 01:49:29 }
- => Log Id : [4][ Line : 19] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Success] Success Message   :  { DateTime: 2020/11/01 01:49:29 }
- => Log Id : [5][ Line : 20] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [InProgress] Progress Message  :  { DateTime: 2020/11/01 01:49:29 }
- => Log Id : [6][ Line : 21] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Failed] Failed Message    :  { DateTime: 2020/11/01 01:49:29 }
- => Log Id : [7][ Line : 22] [ Function : main] [ Thread Id : 0x10c54edc0] [ File : ../TestWebService/main.cpp] ] : [Done] Done Message      :  { DateTime: 2020/11/01 01:49:29 }
+eLogger 0.5 - compiled on Nov  6 2020
+Release mode: alpha - 2
+Host machine init: 
+Operation System: macOS
+Language Standard: ISO/IEC 14882:2017
+Compiler Type: Clang/LLVM:12.0.0 (clang-1200.0.32.6)
+
+ => Log Id : [0][ Line : 16] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [Info] Info Message      :  { DateTime: 2020/11/06 18:50:48 }
+ => Log Id : [1][ Line : 17] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [Default] Default Message   :  { DateTime: 2020/11/06 18:50:48 }
+ => Log Id : [2][ Line : 18] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [Warning] Warning Message   :  { DateTime: 2020/11/06 18:50:48 }
+ => Log Id : [3][ Line : 19] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [Paused] Paused Message    :  { DateTime: 2020/11/06 18:50:48 }
+ => Log Id : [4][ Line : 20] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [Success] Success Message   :  { DateTime: 2020/11/06 18:50:48 }
+ => Log Id : [5][ Line : 21] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [InProgress] Progress Message  :  { DateTime: 2020/11/06 18:50:48 }
+ => Log Id : [6][ Line : 22] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [Failed] Failed Message    :  { DateTime: 2020/11/06 18:50:48 }
+ => Log Id : [7][ Line : 23] [ Function : main] [ Thread Id : 0x11546bdc0] [ File : ../TestLogger/main.cpp] ] : [Done] Done Message      :  { DateTime: 2020/11/06 18:50:48 }
 ```
 ## Contribution
 Bug fixes, docs, and enhancements welcome! Please let me know kambiz.ceo@gmail.com
