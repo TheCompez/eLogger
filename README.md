@@ -108,12 +108,12 @@ int main()
 ```
 ## Output as User mode:
 ```
-        eLogger 0.5 - compiled on Nov  6 2020
-        Release mode: alpha - 2
-        Host machine init: 
-        Operation System: macOS
-        Language Standard: ISO/IEC 14882:2017
-        Compiler Type: Clang/LLVM:12.0.0 (clang-1200.0.32.6)
+eLogger 0.5 - compiled on Nov  6 2020
+Release mode: alpha - 2
+Host machine init: 
+Operation System: macOS
+Language Standard: ISO/IEC 14882:2017
+Compiler Type: Clang/LLVM:12.0.0 (clang-1200.0.32.6)
 
  => Log Id : [0] : [Info] Info Message      :  { DateTime: 2020/11/01 01:48:19 }
  => Log Id : [1] : [Default] Default Message   :  { DateTime: 2020/11/01 01:48:19 }
