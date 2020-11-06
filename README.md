@@ -145,10 +145,9 @@ Compiler Type: Clang/LLVM:12.0.0 (clang-1200.0.32.6)
 ## Contribution
 Bug fixes, docs, and enhancements welcome! Please let me know kambiz.ceo@gmail.com
 
-## Shots of User and Developer mode
-
-https://github.com/KambizAsadzadeh/eLogger/blob/main/Screen%20Shot%202020-11-06%20at%207.28.13%20PM.png
-https://github.com/KambizAsadzadeh/eLogger/blob/main/Screen%20Shot%202020-11-06%20at%207.28.34%20PM.png
+**Screen Shots**
+![Image of User mode](https://github.com/KambizAsadzadeh/eLogger/blob/main/Screen%20Shot%202020-11-06%20at%207.28.13%20PM.png)
+![Image of Developer mode](https://github.com/KambizAsadzadeh/eLogger/blob/main/Screen%20Shot%202020-11-06%20at%207.28.34%20PM.png)
 
 ## **ToDo**
  * And more features...
