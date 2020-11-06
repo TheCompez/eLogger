@@ -49,7 +49,7 @@ set(ELOGGER_BUILD_DEBUG_MODE true)
 QMAKE:
 DEFINES += ELOGGER_BUILD_DEBUG_MODE
 ```
-- Or you can set this option as c++ boolian type
+- Or you can set this option as c++ boolean type
 ```cpp
 DeveloperMode::IsEnable = true; //false means you can't print any logs.
 ```
